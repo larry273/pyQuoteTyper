@@ -31,6 +31,9 @@ class typeWindow(QWidget):
         self.currentLetter = None
         self.currentIndex = None
         self.typedLetter = None
+        self.accuracy = None
+        self.total = None
+
 
     def update_letter(self, index):
         i = index
@@ -42,14 +45,17 @@ class typeWindow(QWidget):
     
     #check the user input matches the current typed section
     def check_input(self):
-        typed = self.ui.lineEdit.text()[-1]
-        print(typed)
+        try:
+            typed = self.ui.lineEdit.text()[-1]
+        except IndexError:
+            return
+        #print(typed)
 
         current = self.quote[self.currentIndex]
-        print(current)
+        #print(current)
 
         if typed == current:
-            print('good')
+            #print('good')
             self.acc_signal.emit(1)
             self.currentIndex += 1
             self.ui.lineEdit.setStyleSheet('background-color: #2E86AB')
@@ -57,7 +63,7 @@ class typeWindow(QWidget):
             if typed == ' ':
                 self.ui.lineEdit.clear()
         else:
-            print('bad')
+            #print('bad')
             self.ui.lineEdit.setStyleSheet('background-color: #931621')
             self.acc_signal.emit(0)
         
@@ -67,7 +73,16 @@ class typeWindow(QWidget):
 
     def calc_accuracy(self, result):
         print(result)
-    
+        if result == 1:
+            self.total += 1
+            self.accuracy += 1
+        else:
+            self.total += 1
+        acc = self.accuracy / self.total * 100
+        acc = "{0:.2f}".format(acc)
+        self.ui.accLabel.setText(f'Accuracy: {acc}%')
+
+
     def calc_time(self):
         pass
 
@@ -81,6 +96,9 @@ class typeWindow(QWidget):
         self.quote = ('This is a sample quote. This could be typed')
         self.ui.quoteText.setHtml(self.quote)
         self.currentIndex = 0
+        self.total = 0
+        self.accuracy = 0
+        self.quoteLength = len(self.quote)
     
     def mousePressEvent(self, event):
         self.oldPos = event.globalPos()
