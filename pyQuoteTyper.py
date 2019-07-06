@@ -2,6 +2,7 @@ from PySide2.QtWidgets import QApplication, QWidget, QMessageBox
 from PySide2 import QtCore, QtGui
 from ui.ui_pyTyper import Ui_quoteTyper
 import sys
+import time
 
 class typeWindow(QWidget):
     acc_signal = QtCore.Signal(int)
@@ -29,7 +30,7 @@ class typeWindow(QWidget):
 
         #text input
         self.currentLetter = None
-        self.currentIndex = None
+        self.current_index = None
         self.typedLetter = None
         self.accuracy = None
         self.total = None
@@ -50,16 +51,17 @@ class typeWindow(QWidget):
         except IndexError:
             return
         #print(typed)
-
-        current = self.quote[self.currentIndex]
+        current = self.quote[self.current_index]
         #print(current)
 
         if typed == current:
             #print('good')
             self.acc_signal.emit(1)
-            self.currentIndex += 1
+            self.current_index += 1
+            if self.current_index == self.quote_len:
+                print('Done Typing')
             self.ui.lineEdit.setStyleSheet('background-color: #2E86AB')
-            self.update_letter(self.currentIndex)
+            self.update_letter(self.current_index)
             if typed == ' ':
                 self.ui.lineEdit.clear()
         else:
@@ -70,6 +72,9 @@ class typeWindow(QWidget):
 
     def calc_wpm(self):
         pass
+
+    def message_indicate(self, msg):
+        choice = QMessageBox()
 
     def calc_accuracy(self, result):
         print(result)
@@ -95,10 +100,12 @@ class typeWindow(QWidget):
     def populate_quote(self):
         self.quote = ('This is a sample quote. This could be typed')
         self.ui.quoteText.setHtml(self.quote)
-        self.currentIndex = 0
+        self.current_index = 0
         self.total = 0
         self.accuracy = 0
-        self.quoteLength = len(self.quote)
+        self.quote_len = len(self.quote)
+        self.start_time = time.time()
+        print(self.start_time)
     
     def mousePressEvent(self, event):
         self.oldPos = event.globalPos()
