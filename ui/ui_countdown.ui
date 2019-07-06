@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>countdownForm</class>
+ <widget class="QWidget" name="countdownForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>323</width>
+    <height>236</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#countdownForm{
+	background-color: #2E4057;
+}
+
+QLabel{
+	font: 24pt &quot;Consolas&quot;;
+	color: white;
+}
+QPushButton {
+	font: 12pt &quot;Consolas&quot;;
+	color: white;
+	background-color: #5BC0EB;
+	border-radius: 5;
+}
+QPushButton:pressed {
+	background-color: rgb(53, 114, 138);
+}
+
+QTextEdit {
+	font: 12pt &quot;Consolas&quot;;
+	color: white;
+	background-color: #2E86AB;
+	border-radius: 5;
+	padding: 15;
+
+}
+
+QLineEdit {
+	font: 12pt &quot;Consolas&quot;;
+	color: white;
+	background-color: #2E86AB;
+	border-radius: 5;
+	padding-left: 15;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Get Ready</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="styleSheet">
+      <string notr="true">font: 48pt;</string>
+     </property>
+     <property name="text">
+      <string>5</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

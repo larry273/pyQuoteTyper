@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>quoteTyper</class>
+ <widget class="QWidget" name="quoteTyper">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1172</width>
+    <height>483</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#quoteTyper{
+	background-color: #2E4057;
+}
+
+QLabel{
+	font: 14pt &quot;Consolas&quot;;
+	color: white;
+}
+QPushButton {
+	font: 12pt &quot;Consolas&quot;;
+	color: white;
+	background-color: #5BC0EB;
+	border-radius: 5;
+}
+QPushButton:pressed {
+	background-color: rgb(53, 114, 138);
+}
+
+QTextEdit {
+	font: 12pt &quot;Consolas&quot;;
+	color: white;
+	background-color: #2E86AB;
+	border-radius: 5;
+	padding: 15;
+
+}
+
+QLineEdit {
+	font: 12pt &quot;Consolas&quot;;
+	color: white;
+	background-color: #2E86AB;
+	border-radius: 5;
+	padding-left: 15;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="5" alignment="Qt::AlignRight|Qt::AlignTop">
+    <widget class="QPushButton" name="exitButton">
+     <property name="minimumSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>40</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">width: 40;
+height: 40;</string>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="6">
+    <widget class="QLineEdit" name="lineEdit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0" colspan="6">
+    <widget class="QTextEdit" name="quoteText">
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="styleSheet">
+      <string notr="true">font: 24pt;</string>
+     </property>
+     <property name="text">
+      <string>pyQuoteTyper</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" colspan="6">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="quoteLabel">
+       <property name="text">
+        <string>Quote:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="accLabel">
+       <property name="maximumSize">
+        <size>
+         <width>225</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Consolas</family>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Accuracy: 00.0%</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="wpmLabel">
+       <property name="maximumSize">
+        <size>
+         <width>125</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>WPM: 000</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="timeLabel">
+       <property name="maximumSize">
+        <size>
+         <width>185</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Time: 00:00:00</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="6" column="0" colspan="6">
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Source:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="newButton">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>New Quote</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="restartButton">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Restart</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="giveupButton">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Give Up</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
