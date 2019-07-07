@@ -1,2 +1,2 @@
 # pyQuoteTyper
-A  type racer esque python application
+A type racer esque application made in Python.
