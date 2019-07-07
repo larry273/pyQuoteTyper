@@ -1,2 +1,4 @@
 pyQuote.code-workspace
 /.vscode
+/__pycache__
+/ui/__pycache__

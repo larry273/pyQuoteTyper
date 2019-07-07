@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file '.\ui\ui_quotetyper.ui',
 # licensing of '.\ui\ui_quotetyper.ui' applies.
 #
-# Created: Sat Jul  6 01:06:45 2019
+# Created: Sun Jul  7 00:27:28 2019
 #      by: pyside2-uic  running on PySide2 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -47,6 +47,21 @@ class Ui_quoteTyper(object):
 "    background-color: #2E86AB;\n"
 "    border-radius: 5;\n"
 "    padding-left: 15;\n"
+"}\n"
+"\n"
+"QMessageBox {\n"
+"    font: 14pt \"Consolas\";\n"
+"    color: white;\n"
+"    background-color: #2E4057;\n"
+"}\n"
+"\n"
+"QMessageBox QPushButton {\n"
+"    font: 12pt \"Consolas\";\n"
+"    color: white;\n"
+"    background-color: #5BC0EB;\n"
+"    border-radius: 5;\n"
+"    width: 150;\n"
+"    height: 40;\n"
 "}")
         self.gridLayout = QtWidgets.QGridLayout(quoteTyper)
         self.gridLayout.setObjectName("gridLayout")
@@ -76,7 +91,7 @@ class Ui_quoteTyper(object):
         self.quoteLabel.setObjectName("quoteLabel")
         self.horizontalLayout_3.addWidget(self.quoteLabel)
         self.accLabel = QtWidgets.QLabel(quoteTyper)
-        self.accLabel.setMaximumSize(QtCore.QSize(225, 16777215))
+        self.accLabel.setMaximumSize(QtCore.QSize(235, 16777215))
         font = QtGui.QFont()
         font.setFamily("Consolas")
         font.setPointSize(14)
@@ -91,7 +106,7 @@ class Ui_quoteTyper(object):
         self.wpmLabel.setObjectName("wpmLabel")
         self.horizontalLayout_3.addWidget(self.wpmLabel)
         self.timeLabel = QtWidgets.QLabel(quoteTyper)
-        self.timeLabel.setMaximumSize(QtCore.QSize(185, 16777215))
+        self.timeLabel.setMaximumSize(QtCore.QSize(160, 16777215))
         self.timeLabel.setObjectName("timeLabel")
         self.horizontalLayout_3.addWidget(self.timeLabel)
         self.gridLayout.addLayout(self.horizontalLayout_3, 2, 0, 1, 6)
@@ -125,9 +140,9 @@ class Ui_quoteTyper(object):
         self.exitButton.setText(QtWidgets.QApplication.translate("quoteTyper", "X", None, -1))
         self.label_5.setText(QtWidgets.QApplication.translate("quoteTyper", "pyQuoteTyper", None, -1))
         self.quoteLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "Quote:", None, -1))
-        self.accLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "Accuracy: 00.0%", None, -1))
+        self.accLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "Accuracy: 100.00%", None, -1))
         self.wpmLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "WPM: 000", None, -1))
-        self.timeLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "Time: 00:00:00", None, -1))
+        self.timeLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "Time: 00.00", None, -1))
         self.label_4.setText(QtWidgets.QApplication.translate("quoteTyper", "Source:", None, -1))
         self.newButton.setText(QtWidgets.QApplication.translate("quoteTyper", "New Quote", None, -1))
         self.restartButton.setText(QtWidgets.QApplication.translate("quoteTyper", "Restart", None, -1))
