@@ -2,6 +2,7 @@ from PySide2.QtWidgets import QApplication, QWidget, QMessageBox
 from PySide2 import QtCore, QtGui
 from ui.ui_pyTyper import Ui_quoteTyper
 from countdownWindow import countdownWindow
+import grabQuote
 import sys
 import time
 
@@ -141,7 +142,12 @@ class typeWindow(QWidget):
         self.ui.timeLabel.setText('Time: {0:.2f}'.format(self.time_elapsed))
 
     def populate_quote(self):
-        self.quote = ('This is a sample quote. This could be typed')
+        #self.quote = ('This is a sample quote. This could be typed')
+
+        sample_url = 'https://www.springfieldspringfield.co.uk/view_episode_scripts.php?tv-show=parks-and-recreation&episode=s02e12'
+        
+        script = grabQuote.parse_script(sample_url)
+        self.quote = grabQuote.get_quote(script)
         #self.quote = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
         self.ui.quoteText.setHtml(self.quote)
         self.quote_len = len(self.quote)
