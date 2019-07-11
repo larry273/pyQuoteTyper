@@ -148,6 +148,11 @@ class typeWindow(QWidget):
         
         script = grabQuote.parse_script(sample_url)
         self.quote = grabQuote.get_quote(script)
+        
+        show, season, episode = grabQuote.get_show_episode(sample_url)
+        self.ui.quoteLabel.setText(f'{show}: Season {season} Episode {episode}')
+        self.ui.label_4.setText('Source: www.springfieldspringfield.co.uk')
+
         #self.quote = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
         self.ui.quoteText.setHtml(self.quote)
         self.quote_len = len(self.quote)

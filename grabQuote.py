@@ -36,6 +36,17 @@ def get_quote(script):
             return quote
 
 
+def get_show_episode(url):
+    url = url.split('?')[1]
+    url_data = url.split('=')
+    show = url_data[1].replace('&episode', '').replace('-', ' ').title()
+    episode = url_data[2][4:]
+    season = url_data[2][1:3]
+    print(f'Show: {show}\n Season {season} Episode {episode}')
+    return (show,season,episode)
+
+
 script = parse_script(sample_url)
 quote = get_quote(script)
+get_show_episode(sample_url)
 
