@@ -3,7 +3,7 @@
 # Form implementation generated from reading ui file '.\ui\ui_quotetyper.ui',
 # licensing of '.\ui\ui_quotetyper.ui' applies.
 #
-# Created: Sun Jul  7 00:27:28 2019
+# Created: Thu Jul 11 21:51:49 2019
 #      by: pyside2-uic  running on PySide2 5.13.0
 #
 # WARNING! All changes made in this file will be lost!
@@ -138,7 +138,7 @@ class Ui_quoteTyper(object):
     def retranslateUi(self, quoteTyper):
         quoteTyper.setWindowTitle(QtWidgets.QApplication.translate("quoteTyper", "Form", None, -1))
         self.exitButton.setText(QtWidgets.QApplication.translate("quoteTyper", "X", None, -1))
-        self.label_5.setText(QtWidgets.QApplication.translate("quoteTyper", "pyQuoteTyper", None, -1))
+        self.label_5.setText(QtWidgets.QApplication.translate("quoteTyper", "Quote Racer", None, -1))
         self.quoteLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "Quote:", None, -1))
         self.accLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "Accuracy: 100.00%", None, -1))
         self.wpmLabel.setText(QtWidgets.QApplication.translate("quoteTyper", "WPM: 000", None, -1))

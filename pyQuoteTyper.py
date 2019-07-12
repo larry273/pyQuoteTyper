@@ -45,22 +45,31 @@ class typeWindow(QWidget):
         colored = self.quote[:i]
         uncolored = self.quote[i:]
 
-        new_text = f"<span style='color:#00453C;font-weight:bold'>{colored}</span>{uncolored}"
+        new_text = f"<span style='color:#00453C;background-color:#42f5a7;font-weight:bold'>{colored}</span>{uncolored}"
         self.ui.quoteText.setText(new_text)
     
     #check the user input matches the current typed section
     def check_input(self):
         try:
-            typed = self.ui.lineEdit.text()[-1]
+            typed_line = self.ui.lineEdit.text()
+            typed = typed_line[-1]
         except IndexError:
             return
         current = self.quote[self.current_index]
+        current_word = self.quote_words[self.current_word_index]
 
-        if typed == current:
+        if typed == current and typed_line in current_word:
             self.acc_signal.emit(1)
+            
             self.current_index += 1
+
+            if typed_line == current_word:
+                self.current_word_index += 1
+                self.ui.lineEdit.clear()
+
             self.ui.lineEdit.setStyleSheet('background-color: #2E86AB')
             self.update_letter(self.current_index)
+
             if self.current_index == self.quote_len:
                 print('Done Typing')
                 #end_time = time.time()
@@ -81,8 +90,8 @@ class typeWindow(QWidget):
                 )
                 self.message_indicate(msg)
             
-            if typed == ' ':
-                self.ui.lineEdit.clear()
+            #if typed == ' ':
+            #    self.ui.lineEdit.clear()
         else:
             #print('bad')
             self.ui.lineEdit.setStyleSheet('background-color: #931621')
@@ -121,6 +130,7 @@ class typeWindow(QWidget):
 
     def reset(self):
         self.current_index = 0
+        self.current_word_index = 0
         self.total = 0
         self.accuracy = 0
         self.time_elapsed = 0
@@ -156,6 +166,10 @@ class typeWindow(QWidget):
         #self.quote = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
         self.ui.quoteText.setHtml(self.quote)
         self.quote_len = len(self.quote)
+        
+        words = self.quote.split(' ')
+        self.quote_words = [x for y in (words[i:i+1] + [' '] * (i < len(words) - 1) for i in range(0, len(words), 1)) for x in y]
+
 
         self.countdown.start_countdown()
 

@@ -46,7 +46,7 @@ def get_show_episode(url):
     return (show,season,episode)
 
 
-script = parse_script(sample_url)
-quote = get_quote(script)
-get_show_episode(sample_url)
+#script = parse_script(sample_url)
+#quote = get_quote(script)
+#get_show_episode(sample_url)
 

@@ -114,7 +114,7 @@ height: 40;</string>
       <string notr="true">font: 24pt;</string>
      </property>
      <property name="text">
-      <string>pyQuoteTyper</string>
+      <string>Quote Racer</string>
      </property>
     </widget>
    </item>
